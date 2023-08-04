@@ -89,32 +89,28 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-3">
-                        <div class="sidebar">
-                            <!-- Sidebar -->
-                            <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-                                <div class="position-sticky">
+                        <!-- Sidebar -->
+                        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse">
+                            <div class="position-sticky">
                                 <div class="list-group list-group-flush mt-4">
                                     <a
                                     href="#"
-                                    class="list-group-item list-group-item-action py-2 ripple"
+                                    class="list-group-item list-group-item-action py-2 ripple bg-danger fw-bold text-white"
                                     aria-current="true"
                                     >
                                     <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
                                     </a>
-                                    <a href="{{ route('admin.projects.index') }}" class="list-group-item list-group-item-action py-2 ripple">
+                                    <a href="{{ route('admin.projects.index') }}" class="list-group-item list-group-item-action py-2 ripple bg-danger fw-bold text-white">
                                     <i class="fas fa-chart-area fa-fw me-3"></i><span>Project</span>
                                     </a>
-                                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+                                    <a href="#" class="list-group-item list-group-item-action py-2 ripple bg-danger fw-bold text-white"
                                     ><i class="fas fa-lock fa-fw me-3"></i><span>User</span></a>
                                 </div>
-                                </div>
-                            </nav>
-                        </div>
+                            </div>
+                        </nav>
                     </div>
                     <div class="col-9">
-                        <div class="padding_main">
-                            @yield('content')
-                        </div>
+                        @yield('content')
                     </div>
                 </div>
             </div>

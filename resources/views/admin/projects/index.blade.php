@@ -16,10 +16,10 @@
                 <tbody>
                     @foreach ($projects as $project)  
                         <tr>
-                            <th class="bg-info fw-bold text-white" scope="row">{{ $project->id }}</th>
-                            <td class="bg-info fw-bold text-white">{{ $project->title }}</td>
-                            <td class="bg-info fw-bold text-white">{{ $project->slug }}</td>
-                            <td class="bg-info fw-bold text-white">
+                            <th class="bg-info fw-bold" scope="row">{{ $project->id }}</th>
+                            <td class="bg-info fw-bold">{{ $project->title }}</td>
+                            <td class="bg-info fw-bold">{{ $project->slug }}</td>
+                            <td class="bg-info fw-bold">
                                 <a class="btn btn-dark btn-sm" href="#"><i class="fas fa-eye"></i></a>
                                 <a class="btn btn-warning btn-sm" href=""><i class="fas fa-pen"></i></a>
                                 <form class="d-inline-block" action="#" onsubmit="return confirm('Sei sicuro di voler cancellare questo fumetto?')" method="POST">

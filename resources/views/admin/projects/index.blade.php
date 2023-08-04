@@ -7,10 +7,10 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Slug</th>
-                        <th scope="col">Azioni</th>                            
+                        <th class="bg-dark text-white"  scope="col"><h2 class="fw-bold">Id</h2></th>
+                        <th class="bg-dark text-white"  scope="col"><h2 class="fw-bold">Title</h2></th>
+                        <th class="bg-dark text-white"  scope="col"><h2 class="fw-bold">Slug</h2></th>
+                        <th class="bg-dark text-white"  scope="col"><h2 class="fw-bold">Azioni</h2></th>                            
                     </tr>
                 </thead>
                 <tbody>

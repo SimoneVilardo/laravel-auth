@@ -40,13 +40,13 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
 
-        $post = new Post();
+        $project = new Project();
 
-        $form_data['slug'] =  $post->generateSlug($form_data['title']);
+        $form_data['slug'] =  $project->generateSlug($form_data['title']);
 
-        $post->fill($form_data);
+        $project->fill($form_data);
 
-        $post->save();
+        $project->save();
 
         return redirect()->route('admin.projects.index');
     }
@@ -70,7 +70,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -82,7 +82,13 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $form_data = $request->all();
+
+        $form_data['slug'] =  $project->generateSlug($form_data['title']);
+
+        $project->update($form_data);
+
+        return redirect()->route('admin.projects.index');
     }
 
     /**

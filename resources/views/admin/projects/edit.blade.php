@@ -8,7 +8,7 @@
                 <a href="{{ route('admin.projects.index') }}" class="btn btn-sm btn-primary">Ritorna alla lista completa</a>
             </div>
             <div class="col-12">
-                <form action="{{ route('admin.projects.update', $project->id) }}" method="POST">
+                <form action="{{ route('admin.projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group mt-4">
@@ -19,6 +19,13 @@
                         @enderror
                     </div>
                     <div class="form-group mt-4">
+                        <div class="col-12">
+                            <img src="{{ asset('storage/'.$project->image) }}">
+                        </div>
+                        <div>
+                            <label class="contol-lable">Immagine</label>
+                            <input class="form-control @error('image')is-invalid @enderror" type="file" name="image" id="image">
+                        </div>
                         <label class="contol-lable">Contenuto</label>
                         <textarea class="form-control" name="content" id="content" placeholder="Contenuto">{{ old('content') ?? $project->content }}</textarea>
                     </div>

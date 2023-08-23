@@ -7,6 +7,9 @@
                 <h1 class="my-5">{{ $project->title }}</h1>
             </div>
             <div class="col-12">
+                <img src="{{ asset('storage/'.$project->image) }}">
+            </div>
+            <div class="col-12">
                 <p>
                     {{ $project->content }}
                 </p>

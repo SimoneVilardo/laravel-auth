@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        
+
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -42,6 +43,11 @@ class ProjectController extends Controller
         $form_data = $request->all();
 
         $project = new Project();
+
+        if($request->hasFile('image')){
+            $path = Storage::put('project_image', $request->image);
+            $form_data['image'] = $path;
+        }
 
         $form_data['slug'] =  $project->generateSlug($form_data['title']);
 
